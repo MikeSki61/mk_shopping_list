@@ -49,24 +49,24 @@ class Launch:
                 # Add an item to the grocery list.
                 self.handle_add_command()
 
-            elif command == "remove":
+            if command == "remove":
                 # Remove an item from the grocery list.
                 self.handle_remove_command()
 
-            elif command == "edit":
+            if command == "edit":
                 # Edit an item in the grocery list.
                 self.handle_edit_command()
 
-            elif command == "list":
-                self.grocery_app.list_items(self.grocery_app.grocery_list)
+            if command == "list":
+                self.handle_list_command()
 
-            elif command == "export":
+            if command == "export":
                 self.grocery_app.export_items()
 
-            elif command == "search":
+            if command == "search":
                 self.handle_search_command()
 
-            elif command == "quit":
+            if command == "quit":
                 break
 
             else:
@@ -78,7 +78,7 @@ class Launch:
             store = args.store
             cost = args.cost
             amount = args.amount
-            priority = args.proritiy
+            priority = args.priority
             buy = args.buy.lower() in constants.BUY_TRUE
         else:
          name, store, cost, amount, priority, buy = self.get_inputs()
@@ -390,19 +390,19 @@ def main():
             )
             return
     
-    match args.command:
-        case "add":
-            app.handle_add_command(args)
-        case "remove":
-            app.handle_remove_command()
-        case "edit":
-            app.handle_edit_command()
-        case "list":
-            app.grocery_app.list_items(app.grocery_app.grocery_list)
-        case "export":
-            app.grocery_app.export_items()
-        case "search":
-            app.handle_search_command()
+        match args.command:
+            case "add":
+                app.handle_add_command(args)
+            case "remove":
+                app.handle_remove_command()
+            case "edit":
+                app.handle_edit_command()
+            case "list":
+                app.grocery_app.list_items(app.grocery_app.grocery_list)
+            case "export":
+                app.grocery_app.export_items()
+            case "search":
+                app.handle_search_command()
 
 # Call the function
 if __name__ == "__main__":
