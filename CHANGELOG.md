@@ -5,7 +5,7 @@
 ##  Day 10 OOP 
 - added static decorators to some functions
 - refactored code 
-- tested code after eview changes
+- tested code after review changes
 
 ## [2.0.0] -2025-11-12
 
